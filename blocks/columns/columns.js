@@ -1,10 +1,10 @@
 export default function decorate(block) {
   // Step 1: Get the columns inside the block
   const cols = [...block.firstElementChild.children];
-  
+
   // Step 2: Add a class to the block indicating the number of columns
   block.classList.add(`columns-${cols.length}-cols`);
-  
+
   // Step 3: Iterate through each row in the block
   [...block.children].forEach((row) => {
     // Step 4: Iterate through each column in the row
