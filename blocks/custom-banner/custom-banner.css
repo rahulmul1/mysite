@@ -10,7 +10,7 @@
     width: 100%;
     text-align: center; /* Center align the text */
     color: white; /* Adjust text color as needed */
-    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better readability */
+    background: rgba(0 0 0 / 50%); /* Modern color-function notation and alpha value notation */
     padding: 10px; /* Adjust padding as needed */
     box-sizing: border-box;
 }
