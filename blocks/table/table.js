@@ -29,4 +29,6 @@ export default async function decorate(block) {
       row.append(cell);
     });
   });
+  block.innerHTML = '';
+  block.append(table);
 }
