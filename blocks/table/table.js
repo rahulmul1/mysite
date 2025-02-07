@@ -5,10 +5,10 @@
  */
 
 function buildCell(rowIndex) {
-    const cell = rowIndex ? document.createElement('td') : document.createElement('th');
-    if (!rowIndex) cell.setAttribute('scope', 'col');
-    return cell;
-  }
+  const cell = rowIndex ? document.createElement('td') : document.createElement('th');
+  if (!rowIndex) cell.setAttribute('scope', 'col');
+  return cell;
+}
   
 export default async function decorate(block) {
   const table = document.createElement('table');
