@@ -266,3 +266,9 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+/* Added by Rahul to use the shopping bag icon is header.  The default direction for display: flex; is row. */
+header nav .nav-tools div {
+  display: flex;
+  gap: 16px;
+}
