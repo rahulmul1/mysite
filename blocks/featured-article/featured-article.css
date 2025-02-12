@@ -1,10 +1,13 @@
+.featured-article {
+    margin-top: 20px; /* Add margin to the top */
+    margin-bottom: 20px; /* Add margin to the bottom */
+}
+
 .featured-article div {
     display: flex;
     align-items: stretch; /* Stretch items to match the height of the container */
     flex-direction: column; /* Reverse the order to have image on the left */
     box-sizing: border-box;
-    margin-top: 20px; /* Add margin to the top */
-    margin-bottom: 20px; /* Add margin to the bottom */
 }
 
 .featured-article .featured-article-content {
@@ -45,7 +48,7 @@
     display: block;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
     .featured-article div {
         flex-direction: row; /* Reverse the order to have image on the left */
     }
