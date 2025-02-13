@@ -1,0 +1,46 @@
+/* Container for recent articles */
+.recent-articles div{
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 20px; /* Add space between columns */
+}
+
+/* Each recent article */
+.recent-article {
+  flex: 1 1 calc(33.333% - 20px); /* Take up 1/3 of the container width minus the gap */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 20px; /* Add padding inside each article */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .recent-article {
+    flex: 1 1 calc(50% - 20px); /* Take up 1/2 of the container width minus the gap */
+  }
+}
+
+@media (max-width: 480px) {
+  .recent-article {
+    flex: 1 1 100%; /* Take up the full width of the container */
+  }
+}
+
+/* Styling for the picture element */
+.recent-article-picture {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px; /* Add space below the picture */
+}
+
+/* Styling for the button container */
+.recent-article-button-container {
+  margin-top: 10px; /* Add space above the button container */
+}
+
+/* Styling for the content paragraphs */
+.recent-article-content {
+  margin-bottom: 10px; /* Add space below each paragraph */
+}
