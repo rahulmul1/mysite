@@ -28,10 +28,6 @@
   flex-direction: column; /* Stack content vertically */
 }
 
-/* Remove padding from the first child of recent-articles-content */
-.recent-articles-content .recent-article:first-child {
-  padding-left: 0; /* Remove padding */
-}
 
 /* Responsive layout for smaller screens */
 @media (max-width: 1024px) {
