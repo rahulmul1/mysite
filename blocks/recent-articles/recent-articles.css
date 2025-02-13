@@ -4,12 +4,33 @@
   flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
+.recent-articles-heading {
+  position: relative;
+  padding-bottom: 10px; /* Add space for the underline */
+}
+
+.recent-articles-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 84px;
+  height: 4px; /* Thickness of the underline */
+  background-color: yellow; /* Color of the underline */
+}
+
 /* Each recent article */
 .recent-article {
   flex: 1 1 calc(25% - 20px); /* Take up 1/4 of the container width minus the gap */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   display: flex;
+  padding: 10px; /* Add padding inside each article */
   flex-direction: column; /* Stack content vertically */
+}
+
+/* Remove padding from the first child of recent-articles-content */
+.recent-articles-content .recent-article:first-child {
+  padding-left: 0; /* Remove padding */
 }
 
 /* Responsive layout for smaller screens */
