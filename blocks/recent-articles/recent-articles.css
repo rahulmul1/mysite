@@ -2,7 +2,6 @@
 .recent-articles div{
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next line */
-  gap: 20px; /* Add space between columns */
 }
 
 /* Each recent article */
@@ -35,12 +34,18 @@
   margin-bottom: 10px; /* Add space below the picture */
 }
 
-/* Styling for the button container */
-.recent-article-button-container {
-  margin-top: 10px; /* Add space above the button container */
+/* Styling for the link container */
+.recent-article-link-container {
+  margin: 0px; /* Add space above the link container */
+  font-size: var(--heading-font-size-sm); /* Set font size to small */
+}
+
+.recent-article-link-container a {
+  color: black;
 }
 
 /* Styling for the content paragraphs */
 .recent-article-content {
   margin-bottom: 10px; /* Add space below each paragraph */
+  font-size: 0.875rem; /* Set font size to small */
 }
