@@ -173,23 +173,38 @@ button {
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  padding: 1em 1.5em;
   font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--button-primary-color); 
+  color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: uppercase; /* Make the text uppercase */
+  font-size: var(--body-font-size-xs)  /* Set font size to small */;
 }
 
+ol li button {
+  padding: 0;
+  background-color: grey;
+  border: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+ol li button:active {
+  color: black;
+}
+
+/*
 a.button:hover,
 a.button:focus,
 button:hover,
@@ -197,6 +212,7 @@ button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
+*/
 
 button:disabled,
 button:disabled:hover {

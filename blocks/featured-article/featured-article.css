@@ -18,14 +18,6 @@
     flex-direction: column; /* Arrange the content inside in a column */
 }
 
-.featured-article-content a.button {
-    background-color: var(--button-primary-color); /* Set the background color to yellow */
-    border-radius: 0; /* Remove rounded corners */
-    border-width: 1.6px; /* Set the border width to 1.6px */
-    border-style: solid; /* Set the border style to solid */
-    color: black; /* Set the text color to black */
-    font-size: var(--body-font-size-xs);  /* Set the font size to 1.6rem */
-}
 
 .featured-article-image {
     flex: 0 0 60%; /* Make the image take up 70% of the space */
