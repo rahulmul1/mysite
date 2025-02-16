@@ -16,7 +16,7 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
+  --link-color: #ffea00;
   --link-hover-color: red;
   --button-primary-color: #ffea00;
 
@@ -257,6 +257,21 @@ main > .section > div {
 
 main > .section:first-of-type {
   margin-top: 0;
+}
+
+.heading.underline h2 {
+  display: inline-block;
+  position: relative;
+}
+
+.heading.underline h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px; /* Increase space between text and underline */
+  width: 50%;
+  height: 4px; /* Adjust thickness */
+  background-color: var(--link-color);
 }
 
 @media (width >= 900px) {

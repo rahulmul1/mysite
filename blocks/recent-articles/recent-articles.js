@@ -4,11 +4,8 @@ export default function decorateRecentArticles(block) {
 
   // Step 3: Add classes to the article divs
   children.forEach((child) => {
-    if (child === children[0]) {
-      child.classList.add('recent-articles-heading');
-    } else if (child === children[1]) {
-      child.classList.add('recent-articles-content');
-    }
+    child.classList.add('recent-articles-content');
+    
     const articleDivs = [...child.children];
     articleDivs.forEach((articleDiv) => {
       if (child.classList.contains('recent-articles-content')) {
