@@ -72,3 +72,8 @@
   font-size: 0.875rem; /* Set font size to small */
   text-transform: uppercase; /* Make content text uppercase */
 }
+
+.recent-articles {
+  border-bottom: 2px solid lightgrey; /* Add a grey line below the content */
+  padding-bottom: 30px; /* Add space below the content */
+}

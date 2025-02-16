@@ -128,7 +128,14 @@
     left: calc(50% - 2px);
 }
 
-@media (width >= 600px) {
+.carousel .carousel-slide .carousel-slide-content {
+    width: 100%;
+    padding-top: 16px;
+    padding-left: 16px;
+    font-size: var(--body-font-size-xs);
+}
+
+@media (width >= 900px) {
     .carousel .carousel-navigation-buttons {
         left: 24px;
         right: 24px;
