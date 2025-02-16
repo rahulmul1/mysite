@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     max-width: 1200px; /* Adjust as needed */
-    margin: auto;
+    margin: 20px 0;
 }
 
 .carousel .carousel-slides-container {

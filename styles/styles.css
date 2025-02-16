@@ -262,17 +262,19 @@ main > .section:first-of-type {
 .heading.underline h2 {
   display: inline-block;
   position: relative;
+  padding-bottom: 12px; /* Adds space between text and underline */
 }
 
 .heading.underline h2::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -20px; /* Increase space between text and underline */
-  width: 50%;
+  left: 0; /* Align to the left */
+  bottom: 0; /* Position at the bottom */
+  width: 50%; /* Make the underline 50% of text width */
   height: 4px; /* Adjust thickness */
   background-color: var(--link-color);
 }
+
 
 @media (width >= 900px) {
   
