@@ -20,9 +20,12 @@
   --link-hover-color: red;
   --button-primary-color: #ffea00;
 
+  --fontFamilySansSerif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fontFamilySerif: "Asar", Georgia, "Times New Roman", Times, serif;
+
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: var(--fontFamilySansSerif);
+  --heading-font-family: var(--fontFamilySansSerif);
 
   /* body sizes */
   --body-font-size-m: 22px;
