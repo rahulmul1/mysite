@@ -4,6 +4,8 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 header nav {
@@ -37,6 +39,11 @@ header nav[aria-expanded='true'] {
     gap: 0 32px;
     max-width: 1264px;
     padding: 0 32px;
+  }
+
+  header nav .nav-sections {
+    text-transform: uppercase;
+    margin-left: auto; /* Pushes it to the right */
   }
 
   header nav[aria-expanded='true'] {
@@ -152,9 +159,9 @@ header nav .nav-brand img {
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
-  flex: 1 1 auto;
   display: none;
   visibility: hidden;
+  align-items: end;
 }
 
 header nav[aria-expanded='true'] .nav-sections {
