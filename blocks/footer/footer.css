@@ -1,3 +1,4 @@
+/* General Footer Styling */
 .footer {
   background-color: #111; /* Dark background */
   color: white;
@@ -38,18 +39,32 @@
   font-size: 14px;
 }
 
+/* Footer Social Section */
 .footer-social {
-  text-align: right;
+  display: flex;
+  align-items: center;
   font-size: 14px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-.footer-social img {
+/* Social Icons Block */
+.social-icons {
+  display: flex;
+  gap: 12px; /* Spacing between icons */
+  background-color: #f4f4f4; /* Light background to match design */
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-left: 12px;
+}
+
+/* Social Icons Styling */
+.social-icons .icon img {
   width: 24px;
   height: 24px;
-  margin: 8px;
 }
 
+/* Footer Copyright Section */
 .footer-copywrite-section {
   border-top: 1px solid #333;
   margin-top: 20px;
@@ -57,25 +72,31 @@
   font-size: 14px;
 }
 
+/* Content Wrapper */
 .default-content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
 }
 
+/* Responsive Design */
 @media (max-width: 900px) {
   .footer-nav-section {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
+
   .footer-nav {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   .footer-social {
-      text-align: center;
-      margin-top: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    margin-top: 8px;
   }
 }

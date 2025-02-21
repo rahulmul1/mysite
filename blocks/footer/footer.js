@@ -53,6 +53,20 @@ export default async function decorate(block) {
       if (socialPElement) {
         socialPElement.classList.add('footer-social');
         console.log('Added class "footer-social" to p element');
+
+        // Create a div for social icons
+        const socialIconsDiv = document.createElement('div');
+        socialIconsDiv.classList.add('social-icons');
+
+        // Move social icons into the new div
+        const icons = socialPElement.querySelectorAll('.icon');
+        icons.forEach((icon) => {
+          socialIconsDiv.appendChild(icon);
+        });
+
+        // Append the new div to the social paragraph
+        socialPElement.appendChild(socialIconsDiv);
+        console.log('Moved social icons into a new div');
       }
 
       // Remove button class from logo
