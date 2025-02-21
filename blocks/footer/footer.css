@@ -14,6 +14,10 @@
   padding: 0 32px;
 }
 
+.footer-nav-wrapper > div:first-child {
+  margin-right: 10px; /* Adjust the space between the first and second div */
+}
+
 .footer-logo img {
   width: 128px;
   height: auto; /* Adjust logo size */
@@ -37,6 +41,10 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
 }
 
 /* Footer Social Section */

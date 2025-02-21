@@ -59,7 +59,7 @@ export default async function decorate(block) {
         socialIconsDiv.classList.add('social-icons');
 
         // Move social icons into the new div
-        const icons = socialPElement.querySelectorAll('.icon');
+        const icons = socialPElement.querySelectorAll('a');
         icons.forEach((icon) => {
           socialIconsDiv.appendChild(icon);
         });
