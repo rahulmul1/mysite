@@ -80,7 +80,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   line-height: 1.6;
 }
 
@@ -111,7 +111,7 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.25;
   scroll-margin: 40px;
 }
@@ -144,6 +144,10 @@ pre {
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
+}
+
+main {
+  margin-top: 140px;
 }
 
 main > div {
@@ -274,17 +278,12 @@ main > .section:first-of-type {
   left: 0; /* Align to the left */
   bottom: 0; /* Position at the bottom */
   width: 50%; /* Make the underline 50% of text width */
-  height: 4px; /* Adjust thickness */
+  height: 2px; /* Adjust thickness */
   background-color: var(--link-color);
 }
 
 
 @media (width >= 900px) {
-  
-  main {
-    margin-top: 80px;
-  }
-
   main > .section > div {
     padding: 0 32px;
   }

@@ -59,7 +59,15 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
 }
+
+header nav .nav-sections a:any-link:hover {
+  background-color: yellow;
+  padding: 12px 24px;
+  border-radius: 4px;
+}
+
 
 /* hamburger */
 header nav .nav-hamburger {
@@ -173,7 +181,7 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-xs);
 }
 
 header nav .nav-sections ul > li {
@@ -227,7 +235,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 24px;
+    gap: 48px;
     margin: 0;
   }
 
