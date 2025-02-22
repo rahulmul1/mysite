@@ -1,0 +1,43 @@
+/* People section */
+.person-details {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 80px; /* Space between people */
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 50px 0; /* Adds space above and below */
+  }
+  
+  /* Individual person styling */
+  .person {
+    max-width: 200px;
+  }
+  
+  /* Image container */
+  .person picture {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Circular image styling */
+  .person img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Name styling */
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Role styling */
+  .role {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+  }
