@@ -1,11 +1,13 @@
 version: 1
-# See https://www.aem.live/docs/setup-indexing.
+# See https://www.hlx.live/docs/setup-indexing.
 
 indices:
-  magazine:
+  site:
     include:
       - '/magazine/**'
-    target: query-index
+    exclude:
+      - '**/drafts.*'
+    target: /query-index
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -19,3 +21,7 @@ indices:
         select: head > meta[name="description"]
         value: |
           attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
