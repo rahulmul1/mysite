@@ -1,17 +1,16 @@
 /* Container for recent articles */
 .recent-articles div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch; /* Ensures all articles are of equal height */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: start; /* Align items to the start */
 }
 
 /* Each recent article */
 .recent-article {
-  flex: 1 1 calc(25% - 20px); /* Take up 1/4 of the container width minus the gap */
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Ensures content fills the height */
+  display: grid;
+  grid-template-rows: auto auto 1fr; /* Ensure consistent layout */
+  gap: 10px;
   padding: 10px;
 }
 
@@ -41,34 +40,15 @@
 .recent-article-content {
   font-size: 0.875rem;
   text-transform: uppercase;
-  flex-grow: 1; /* Ensures content expands to fill available space */
   display: flex;
   align-items: flex-start;
+  margin-top: auto; /* Push the description to the bottom */
 }
 
 /* Ensure text does not overflow */
 .recent-article-content p {
   margin: 0; /* Remove default margin */
   line-height: 1.4;
-}
-
-/* Responsive layout for smaller screens */
-@media (max-width: 1024px) {
-  .recent-article {
-    flex: 1 1 calc(33.333% - 20px); /* Take up 1/3 of the container */
-  }
-}
-
-@media (max-width: 768px) {
-  .recent-article {
-    flex: 1 1 calc(50% - 20px); /* Take up 1/2 of the container */
-  }
-}
-
-@media (max-width: 480px) {
-  .recent-article {
-    flex: 1 1 100%; /* Take up full width on mobile */
-  }
 }
 
 /* Styling for section separator */
