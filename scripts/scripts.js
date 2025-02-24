@@ -30,6 +30,20 @@ function buildHeroBlock(main) {
 }
 
 /**
+ * Fetches the query index
+ */
+export async function fetchQueryIndex() {
+  const resp = await fetch('/query-index.json');
+  const json = await resp.json();
+  const lookup = {};
+  json.data.forEach((row) => {
+    lookup[row.path] = row;
+  });
+  window.pageIndex = { data: json.data, lookup };
+}
+
+
+/**
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {

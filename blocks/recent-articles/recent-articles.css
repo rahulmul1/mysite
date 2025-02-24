@@ -1,64 +1,83 @@
 /* Container for recent articles */
-.recent-articles div{
+.recent-articles div {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap;
+  align-items: stretch; /* Ensures all articles are of equal height */
 }
 
 /* Each recent article */
 .recent-article {
   flex: 1 1 calc(25% - 20px); /* Take up 1/4 of the container width minus the gap */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box;
   display: flex;
-  padding: 10px; /* Add padding inside each article */
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content fills the height */
+  padding: 10px;
 }
 
-
-/* Responsive layout for smaller screens */
-@media (max-width: 1024px) {
-  .recent-article {
-    flex: 1 1 calc(33.333% - 20px); /* Take up 1/3 of the container width minus the gap */
-  }
-}
-
-@media (max-width: 768px) {
-  .recent-article {
-    flex: 1 1 calc(50% - 20px); /* Take up 1/2 of the container width minus the gap */
-  }
-}
-
-@media (max-width: 480px) {
-  .recent-article {
-    flex: 1 1 100%; /* Take up the full width of the container */
-  }
-}
-
-/* Styling for the picture element */
-.recent-article-picture {
+/* Ensure images have a consistent height */
+.recent-article-picture img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Ensures images scale properly */
   display: block;
-  margin-bottom: 10px; /* Add space below the picture */
+  border-radius: 5px; /* Slight rounding for aesthetics */
 }
 
 /* Styling for the link container */
 .recent-article-link-container {
-  margin: 0px; /* Add space above the link container */
-  font-size: var(--heading-font-size-xs); /* Set font size to small */
+  font-size: var(--heading-font-size-xs); /* Use consistent font sizing */
+  margin-top: 5px;
 }
 
 .recent-article-link-container a {
   color: black; /* Set link color to black */
   text-transform: uppercase; /* Make link text uppercase */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Emphasize links */
 }
 
 /* Styling for the content paragraphs */
 .recent-article-content {
-  font-size: 0.875rem; /* Set font size to small */
-  text-transform: uppercase; /* Make content text uppercase */
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  flex-grow: 1; /* Ensures content expands to fill available space */
+  display: flex;
+  align-items: flex-start;
 }
 
+/* Ensure text does not overflow */
+.recent-article-content p {
+  margin: 0; /* Remove default margin */
+  line-height: 1.4;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 1024px) {
+  .recent-article {
+    flex: 1 1 calc(33.333% - 20px); /* Take up 1/3 of the container */
+  }
+}
+
+@media (max-width: 768px) {
+  .recent-article {
+    flex: 1 1 calc(50% - 20px); /* Take up 1/2 of the container */
+  }
+}
+
+@media (max-width: 480px) {
+  .recent-article {
+    flex: 1 1 100%; /* Take up full width on mobile */
+  }
+}
+
+/* Styling for section separator */
 .recent-articles {
   border-bottom: 2px solid lightgrey; /* Add a grey line below the content */
   padding-bottom: 30px; /* Add space below the content */
+}
+
+/* Additional spacing and alignment */
+.recent-article:last-child {
+  margin-right: 0; /* Ensure the last item aligns properly */
 }

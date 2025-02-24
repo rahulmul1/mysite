@@ -1,37 +1,51 @@
-export default function decorateRecentArticles(block) {
-  // Step 2: Get the children inside the block
-  const children = [...block.children];
+import { fetchQueryIndex } from '../../scripts/scripts.js';
 
-  // Step 3: Add classes to the article divs
-  children.forEach((child) => {
-    child.classList.add('recent-articles-content');
-    
-    const articleDivs = [...child.children];
-    articleDivs.forEach((articleDiv) => {
-      if (child.classList.contains('recent-articles-content')) {
-        articleDiv.classList.add('recent-article');
-      }
+export default async function decorateRecentArticles(block) {
+  // Fetch articles from query-index.json
+  await fetchQueryIndex();
+  const articles = window.pageIndex.data;
 
-      // Step 4: Add classes to the picture and content elements
-      const pictureElement = articleDiv.querySelector('picture');
-      if (pictureElement) {
-        const pictureParent = pictureElement.closest('p');
-        if (pictureParent) {
-          pictureParent.classList.add('recent-article-picture');
-        }
-      }
+  // Clear the block content
+  block.textContent = '';
 
-      const linkContainer = articleDiv.querySelector('h4');
-      if (linkContainer) {
-        linkContainer.classList.add('recent-article-link-container');
-      }
+  // Create a container for the articles
+  const articlesContainer = document.createElement('div');
+  articlesContainer.classList.add('recent-articles-content');
 
-      const paragraphs = articleDiv.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        if (!paragraph.querySelector('picture') && !paragraph.querySelector('a')) {
-          paragraph.classList.add('recent-article-content');
-        }
-      });
-    });
+  // Create and append articles to the container
+  articles.forEach((article) => {
+    const articleDiv = document.createElement('div');
+    articleDiv.classList.add('recent-article');
+
+    const pictureParent = document.createElement('p');
+    pictureParent.classList.add('recent-article-picture');
+    const pictureElement = document.createElement('picture');
+    const imgElement = document.createElement('img');
+    imgElement.src = article.image;
+    imgElement.alt = article.title;
+    imgElement.loading = 'lazy';
+    pictureElement.appendChild(imgElement);
+    pictureParent.appendChild(pictureElement);
+
+    const linkContainer = document.createElement('h4');
+    linkContainer.classList.add('recent-article-link-container');
+    const linkElement = document.createElement('a');
+    linkElement.href = article.path;
+    linkElement.title = article.title;
+    linkElement.textContent = article.title;
+    linkContainer.appendChild(linkElement);
+
+    const descriptionElement = document.createElement('p');
+    descriptionElement.classList.add('recent-article-content');
+    descriptionElement.textContent = article.description;
+
+    articleDiv.appendChild(pictureParent);
+    articleDiv.appendChild(linkContainer);
+    articleDiv.appendChild(descriptionElement);
+
+    articlesContainer.appendChild(articleDiv);
   });
+
+  // Append the container to the block
+  block.appendChild(articlesContainer);
 }
