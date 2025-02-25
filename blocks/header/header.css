@@ -36,7 +36,7 @@ header nav[aria-expanded='true'] {
   header nav {
     display: flex;
     justify-content: space-between;
-    gap: 0 32px;
+    gap: 0 8px; 
     max-width: 1264px;
     padding: 0 32px;
   }
@@ -60,14 +60,13 @@ header nav p {
 header nav a:any-link {
   color: currentcolor;
   text-decoration: none;
+  padding: 12px 24px; /* Set padding for default state */
+  border-radius: 4px; /* Set border-radius for default state */
 }
 
 header nav .nav-sections a:any-link:hover {
   background-color: yellow;
-  padding: 12px 24px;
-  border-radius: 4px;
 }
-
 
 /* hamburger */
 header nav .nav-hamburger {
@@ -235,7 +234,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 48px;
+    gap: 8px; /* Reduce the gap between navigation items */
     margin: 0;
   }
 
