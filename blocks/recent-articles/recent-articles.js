@@ -5,7 +5,8 @@ export default async function decorateRecentArticles(block) {
   await fetchQueryIndex();
   const articles = window.pageIndex.data;
 
-  // Clear the block content
+  // Clear the block content except for the button container
+  const buttonContainer = block.querySelector('.button-container');
   block.textContent = '';
 
   // Create a container for the articles
@@ -13,9 +14,12 @@ export default async function decorateRecentArticles(block) {
   articlesContainer.classList.add('recent-articles-content');
 
   // Create and append articles to the container
-  articles.forEach((article) => {
+  articles.forEach((article, index) => {
     const articleDiv = document.createElement('div');
     articleDiv.classList.add('recent-article');
+    if (index >= 4) {
+      articleDiv.style.display = 'none'; // Hide articles beyond the first four
+    }
 
     const pictureParent = document.createElement('p');
     pictureParent.classList.add('recent-article-picture');
@@ -48,4 +52,25 @@ export default async function decorateRecentArticles(block) {
 
   // Append the container to the block
   block.appendChild(articlesContainer);
+
+  // Append the button container below the first row of articles
+  if (buttonContainer) {
+    block.appendChild(buttonContainer);
+  }
+
+  // Handle the button click event to show all articles
+  if (buttonContainer) {
+    const button = buttonContainer.querySelector('a');
+    if (button) {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        // Show all hidden articles
+        articlesContainer.querySelectorAll('.recent-article').forEach((article) => {
+          article.style.display = 'block';
+        });
+        // Hide the button after clicking
+        buttonContainer.style.display = 'none';
+      });
+    }
+  }
 }
