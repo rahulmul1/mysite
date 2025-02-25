@@ -209,6 +209,16 @@ export default async function decorate(block) {
         }
       });
     });
+
+    // Highlight the current page link
+    const currentUrl = window.location.href;
+    if (currentUrl !== window.location.origin + '/') {
+      navSections.querySelectorAll('a').forEach((link) => {
+      if (link.href === currentUrl) {
+        link.classList.add('current-page');
+      }
+      });
+    }
   }
 
   const navTools = nav.querySelector('.nav-tools');

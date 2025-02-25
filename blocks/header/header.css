@@ -64,7 +64,8 @@ header nav a:any-link {
   border-radius: 4px; /* Set border-radius for default state */
 }
 
-header nav .nav-sections a:any-link:hover {
+header nav .nav-sections a:any-link:hover,
+header nav .nav-sections a.current-page {
   background-color: yellow;
 }
 
