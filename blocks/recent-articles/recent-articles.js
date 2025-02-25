@@ -17,8 +17,8 @@ export default async function decorateRecentArticles(block) {
   articles.forEach((article, index) => {
     const articleDiv = document.createElement('div');
     articleDiv.classList.add('recent-article');
-    if (index >= 4) {
-      articleDiv.style.display = 'none'; // Hide articles beyond the first four
+    if (index >= 4 && buttonContainer) {
+      articleDiv.style.display = 'none'; // Hide articles beyond the first four if button is present
     }
 
     const pictureParent = document.createElement('p');
@@ -53,13 +53,11 @@ export default async function decorateRecentArticles(block) {
   // Append the container to the block
   block.appendChild(articlesContainer);
 
-  // Append the button container below the first row of articles
+  // Append the button container below the first row of articles if it exists
   if (buttonContainer) {
     block.appendChild(buttonContainer);
-  }
 
-  // Handle the button click event to show all articles
-  if (buttonContainer) {
+    // Handle the button click event to show all articles
     const button = buttonContainer.querySelector('a');
     if (button) {
       button.addEventListener('click', (event) => {
