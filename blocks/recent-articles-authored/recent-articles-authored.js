@@ -1,8 +1,6 @@
 export default function decorateRecentArticles(block) {
-  // Step 2: Get the children inside the block
   const children = [...block.children];
 
-  // Step 3: Add classes to the article divs
   children.forEach((child) => {
     child.classList.add('recent-articles-authored-content');
     
@@ -12,7 +10,6 @@ export default function decorateRecentArticles(block) {
         articleDiv.classList.add('recent-article-authored');
       }
 
-      // Step 4: Add classes to the picture and content elements
       const pictureElement = articleDiv.querySelector('picture');
       if (pictureElement) {
         const pictureParent = pictureElement.closest('p');

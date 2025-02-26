@@ -67,7 +67,6 @@
   filter: invert(1);
 }
 
-/* Styles for larger screens */
 @media (width >= 900px) {
   .person-details {
     display: grid;

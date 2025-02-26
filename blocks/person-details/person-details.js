@@ -1,14 +1,10 @@
 export default function decorate(block) {
-  // Step 2: Get the direct children inside the block
   const children = [...block.children];
 
-  // Step 3: Add classes to the content and image divs
   children.forEach((child) => {
-    // Create a container for the person
     const personContainer = document.createElement('div');
     personContainer.classList.add('person');
 
-    // Move the picture and content into the container
     const picture = child.querySelector('picture');
     const name = child.querySelector('h4');
     const role = child.querySelector('h5');
@@ -44,11 +40,9 @@ export default function decorate(block) {
       personContainer.appendChild(socialLinksContainer);
     }
 
-    // Append the container to the block
     block.appendChild(personContainer);
   });
 
-  // Remove the original children
   children.forEach((child) => {
     block.removeChild(child);
   });

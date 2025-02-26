@@ -8,17 +8,17 @@
     top: 0;
     left: 0;
     width: 100%;
-    text-align: center; /* Center align the text */
-    color: white; /* Adjust text color as needed */
-    background: rgba(0 0 0 / 50%); /* Modern color-function notation and alpha value notation */
-    padding: 10px; /* Adjust padding as needed */
+    text-align: center;
+    color: white;
+    background: rgba(0 0 0 / 50%);
+    padding: 10px;
     box-sizing: border-box;
 }
 
 .banner-title p {
-    margin: 0; /* Remove default margin */
-    font-size: 2em; /* Make the text bigger */
-    font-weight: bold; /* Make the text bolder */
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .banner-image img {

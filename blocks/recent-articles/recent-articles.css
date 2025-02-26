@@ -1,63 +1,55 @@
-/* Container for recent articles */
 .recent-articles div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  align-items: start; /* Align items to the start */
+  align-items: start;
 }
 
-/* Each recent article */
 .recent-article {
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: auto auto 1fr; /* Ensure consistent layout */
+  grid-template-rows: auto auto 1fr;
   gap: 10px;
   padding: 10px;
 }
 
-/* Ensure images have a consistent height */
 .recent-article-picture img {
   width: 100%;
-  height: 200px; /* Set a fixed height for uniformity */
-  object-fit: cover; /* Ensures images scale properly */
+  height: 200px;
+  object-fit: cover;
   display: block;
-  border-radius: 5px; /* Slight rounding for aesthetics */
+  border-radius: 5px;
 }
 
-/* Styling for the link container */
 .recent-article-link-container {
-  font-size: var(--heading-font-size-xs); /* Use consistent font sizing */
+  font-size: var(--heading-font-size-xs);
   margin-top: 5px;
 }
 
 .recent-article-link-container a {
-  color: black; /* Set link color to black */
-  text-transform: uppercase; /* Make link text uppercase */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Emphasize links */
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Styling for the content paragraphs */
 .recent-article-content {
   font-size: 0.875rem;
   text-transform: uppercase;
   display: flex;
   align-items: flex-start;
-  margin-top: auto; /* Push the description to the bottom */
+  margin-top: auto;
 }
 
-/* Ensure text does not overflow */
 .recent-article-content p {
-  margin: 0; /* Remove default margin */
+  margin: 0;
   line-height: 1.4;
 }
 
-/* Styling for section separator */
 .recent-articles {
-  border-bottom: 2px solid lightgrey; /* Add a grey line below the content */
-  padding-bottom: 30px; /* Add space below the content */
+  border-bottom: 2px solid lightgrey;
+  padding-bottom: 30px;
 }
 
-/* Additional spacing and alignment */
 .recent-article:last-child {
-  margin-right: 0; /* Ensure the last item aligns properly */
+  margin-right: 0;
 }

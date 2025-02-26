@@ -1,7 +1,5 @@
 export default function decorateFeaturedArticle(block) {
-  // Step 2: Get the direct children inside the block
   const children = [...block.children];
-  // Step 3: Add classes to the content and image divs
   children.forEach((child) => {
     const innerChildren = [...child.children];
     innerChildren.forEach((innerChild) => {

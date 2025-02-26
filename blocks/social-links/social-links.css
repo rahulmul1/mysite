@@ -1,25 +1,24 @@
 .social-links {
-    display: inline-flex; /* Restrict width to content */
-    justify-content: center;
-    gap: 25px; /* Adjust spacing between icons */
-    background-color: #111; /* Dark background */
-    padding: 0 10px;
-  }
-  
-  .social-link {
-    display: flex;
-    align-items: center;
-  }
-  
-  .social-icon img {
-    width: 32px; /* Adjust icon size */
-    height: 32px;
-    filter: invert(1); /* Makes icons white */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  .social-icon:hover img {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  
+  display: inline-flex;
+  justify-content: center;
+  gap: 25px;
+  background-color: #111;
+  padding: 0 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
