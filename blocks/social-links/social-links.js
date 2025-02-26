@@ -1,28 +1,20 @@
-export default function decorateSocialLinks(block) {
-  const children = [...block.querySelectorAll('div > div')];
+export default function transformSocialLinks(block) {
+  const originalContainer = block.querySelector('div > div');
+  if (!originalContainer) return;
 
-  children.forEach((child) => {
-    const socialLinkContainer = document.createElement('p');
-    socialLinkContainer.classList.add('social-link');
+  const newContainer = document.createElement('div');
+  newContainer.classList.add('person-social-links');
 
-    const link = child.querySelector('a');
-    if (link) {
-      const icon = link.querySelector('.icon img');
-      if (icon) {
-        const iconName = icon.getAttribute('data-icon-name');
-        const iconAlt = icon.getAttribute('alt') || iconName;
-
-        link.classList.add('social-icon', iconName);
-        link.title = iconAlt;
-
-        socialLinkContainer.appendChild(link);
-        block.appendChild(socialLinkContainer);
-      }
-    }
+  const links = originalContainer.querySelectorAll('p');
+  links.forEach((link) => {
+    const newLink = document.createElement('p');
+    newLink.classList.add('person-social-link');
+    newLink.innerHTML = link.innerHTML;
+    newContainer.appendChild(newLink);
   });
 
-  const originalContainer = block.querySelector('div');
-  if (originalContainer) {
-    block.removeChild(originalContainer);
-  }
+  block.innerHTML = '';
+  block.appendChild(newContainer);
 }
+
+document.querySelectorAll('.social-links.block').forEach(transformSocialLinks);
