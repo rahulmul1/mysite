@@ -1,4 +1,4 @@
-export default function decorateFeaturedArticle(block) {
+export default function decorate(block) {
   // Step 2: Get the direct children inside the block
   const children = [...block.children];
 
@@ -10,11 +10,15 @@ export default function decorateFeaturedArticle(block) {
 
     // Move the picture and content into the container
     const picture = child.querySelector('picture');
-    const name = child.querySelector('div:nth-child(2) p');
-    const role = child.querySelector('div:nth-child(3) p');
+    const name = child.querySelector('h4');
+    const role = child.querySelector('h5');
+    const socialLinks = child.querySelectorAll('p');
 
     if (picture) {
-      personContainer.appendChild(picture);
+      const pictureContainer = document.createElement('div');
+      pictureContainer.classList.add('person-picture-container');
+      pictureContainer.appendChild(picture);
+      personContainer.appendChild(pictureContainer);
     }
     if (name) {
       const nameElement = document.createElement('p');
@@ -28,6 +32,17 @@ export default function decorateFeaturedArticle(block) {
       roleElement.textContent = role.textContent;
       personContainer.appendChild(roleElement);
     }
+    if (socialLinks.length > 0) {
+      const socialLinksContainer = document.createElement('div');
+      socialLinksContainer.classList.add('person-social-links');
+      socialLinks.forEach((link) => {
+        const socialLink = document.createElement('p');
+        socialLink.classList.add('person-social-link');
+        socialLink.innerHTML = link.innerHTML;
+        socialLinksContainer.appendChild(socialLink);
+      });
+      personContainer.appendChild(socialLinksContainer);
+    }
 
     // Append the container to the block
     block.appendChild(personContainer);
@@ -38,3 +53,4 @@ export default function decorateFeaturedArticle(block) {
     block.removeChild(child);
   });
 }
+
