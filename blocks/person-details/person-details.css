@@ -1,14 +1,16 @@
+/* Mobile-first styles */
 .person-details {
   display: flex;
-  justify-content: flex-start;
-  gap: 140px; /* Increased spacing between each person */
+  justify-content: center;
+  gap: 20px; /* Reduced spacing for mobile */
   flex-wrap: wrap;
-  text-align: left;
-  padding: 50px 0; /* Added more top and bottom spacing */
+  text-align: center; /* Center align everything */
+  padding: 30px 0; /* Adjusted top and bottom spacing */
 }
 
 .person {
-  max-width: 250px;
+  width: 100%;
+  max-width: 300px; /* Slightly wider on mobile */
   text-align: center; /* Center align text */
 }
 
@@ -17,7 +19,7 @@
   height: 164px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin: 0 auto 15px; /* Center the image container */
 }
 
 .person-picture-container img {
@@ -42,46 +44,45 @@
 .person-social-links {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px; /* Reduced gap between social links */
   background: black; /* Single black background */
-  padding: 8px; /* Reduced padding */
+  padding: 5px; /* Reduced padding */
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 15px; /* Reduced top margin */
+  flex-wrap: wrap;
+  max-width: 120px; /* Restrict the width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .person-social-link a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px; /* Increased icon container size */
-  height: 35px;
+  width: 30px; /* Reduced icon container size */
+  height: 30px;
 }
 
 .person-social-link img {
-  width: 18px; /* Increased icon size */
-  height: 18px;
+  width: 16px; /* Reduced icon size */
+  height: 16px;
   filter: invert(1);
 }
 
-/* Responsive for Mobile */
-@media (max-width: 768px) {
+/* Styles for larger screens */
+@media (width >= 900px) {
   .person-details {
-    justify-content: center;
-    gap: 40px; /* Reduced spacing for mobile */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 40px; /* Adjust gap between items */
+    text-align: left;
   }
 
   .person {
-    width: 100%;
-    max-width: 300px; /* Slightly wider on mobile */
-    text-align: center; /* Center align everything */
-  }
-
-  .person-picture-container {
-    margin: 0 auto 15px; /* Center the image container */
+    max-width: none; /* Remove max-width to allow grid to control width */
   }
 
   .person-social-links {
     justify-content: center;
-    flex-wrap: wrap;
   }
 }
