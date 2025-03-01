@@ -1,7 +1,6 @@
 export default function decorate(block) {
   const children = [...block.children];
 
-  // Create the form element
   const form = document.createElement('form');
   form.classList.add('registration-form');
 
@@ -65,7 +64,6 @@ export default function decorate(block) {
     }
   });
 
-  // Add the submit button
   const submitButtonContainer = children.find((child) => {
     const firstDiv = child.querySelector('div:first-child');
     const fieldDetails = [...firstDiv.querySelectorAll('p')];
@@ -92,10 +90,50 @@ export default function decorate(block) {
     form.appendChild(submitButton);
   }
 
-  // Clear the block and append the form
+  const responseContainer = document.createElement('div');
+  responseContainer.classList.add('response-container');
+  form.appendChild(responseContainer);
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      if (data[key]) {
+        if (Array.isArray(data[key])) {
+          data[key].push(value);
+        } else {
+          data[key] = [data[key], value];
+        }
+      } else {
+        data[key] = value;
+      }
+    });
+
+    try {
+      const response = await fetch('https://reqres.in/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        responseContainer.textContent = `Form submitted successfully: ${JSON.stringify(result, null, 2)}`;
+        responseContainer.style.color = 'green';
+      } else {
+        responseContainer.textContent = `Form submission failed: ${response.statusText}`;
+        responseContainer.style.color = 'red';
+      }
+    } catch (error) {
+      responseContainer.textContent = `Form submission error: ${error}`;
+      responseContainer.style.color = 'red';
+    }
+  });
+
   block.innerHTML = '';
   block.appendChild(form);
 }
-
-// Call the function to decorate the registration block
-document.querySelectorAll('.registration.block').forEach(decorate);
